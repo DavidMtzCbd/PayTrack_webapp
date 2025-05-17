@@ -1,0 +1,133 @@
+<section class="registro">
+  <div class="wrapper">
+    <!-- Sección izquierda (imagen de fondo) -->
+    <div class="section-left"></div>
+
+    <!-- Sección derecha (formulario) -->
+    <div class="section-right">
+      <div class="card">
+        <div class="card-body">
+          <!-- Logo de PayTrack -->
+          <img src="assets/images/logo-paytrack.png" alt="PayTrack" class="logo-paytrack mb-4">
+
+          <h2 class="title">{{ editar ? 'Editar Usuario' : 'Crear cuenta' }}</h2>
+          <p class="subtitle">{{ editar ? 'Actualiza tus datos' : 'Complete tus datos para registrarte' }}</p>
+
+          <!-- Formulario -->
+          <form>
+            <!-- Nombre -->
+            <div class="form-group mb-3">
+              <label for="nombre">Nombre</label>
+              <input
+                type="text"
+                [(ngModel)]="usuarios.first_name"
+                class="form-control"
+                id="nombre"
+                name="first_name"
+                placeholder="Ingresa tu nombre completo"
+              >
+              <div *ngIf="errors.first_name" class="text-danger small">{{ errors.first_name }}</div>
+            </div>
+
+            <!-- Apellido -->
+                         <div class="form-group mb-3">
+              <label for="nombre">Apellidos</label>
+              <input
+                type="text"
+                [(ngModel)]="usuarios.last_name"
+                class="form-control"
+                id="nombre"
+                name="last_name"
+                placeholder="Ingresa tus apellidos"
+              >
+              <div *ngIf="errors.last_name" class="text-danger small">{{ errors.first_name }}</div>
+            </div>
+
+            <!-- Correo electrónico -->
+            <div class="form-group mb-3">
+              <label for="email">Correo electrónico</label>
+              <input
+                type="email"
+                [(ngModel)]="usuarios.email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="tu@email.com"
+                [disabled]="editar"
+              >
+              <div *ngIf="errors.email" class="text-danger small">{{ errors.email }}</div>
+            </div>
+
+            <!-- Contraseña (solo para registro) -->
+            <div class="form-group mb-3" *ngIf="!editar">
+              <label for="password">Contraseña</label>
+              <div class="input-group">
+                <input
+                  type="{{ inputType_1 }}"
+                  [(ngModel)]="usuarios.password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="Crea una contraseña"
+                >
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  (click)="showPassword()"
+                >
+                  <i *ngIf="hide_1" class="bi bi-eye"></i>
+                  <i *ngIf="!hide_1" class="bi bi-eye-slash"></i>
+                </button>
+              </div>
+              <small class="form-text text-muted">Debe incluir 8 caracteres, mayúsculas, minúsculas y números</small>
+              <div *ngIf="errors.password" class="text-danger small">{{ errors.password }}</div>
+            </div>
+
+            <!-- Confirmar contraseña (solo para registro) -->
+            <div class="form-group mb-3" *ngIf="!editar">
+              <label for="confirmar_password">Confirmar contraseña</label>
+              <div class="input-group">
+                <input
+                  type="{{ inputType_2 }}"
+                  [(ngModel)]="usuarios.confirmar_password"
+                  class="form-control"
+                  id="confirmar_password"
+                  name="confirmar_password"
+                  placeholder="Confirma tu contraseña"
+                >
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  (click)="showPwdConfirmar()"
+                >
+                  <i *ngIf="hide_2" class="bi bi-eye"></i>
+                  <i *ngIf="!hide_2" class="bi bi-eye-slash"></i>
+                </button>
+              </div>
+              <div *ngIf="errors.confirmar_password" class="text-danger small">{{ errors.confirmar_password }}</div>
+            </div>
+
+            <!-- Botones -->
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn btn-outline-secondary" (click)="regresar()">
+                Cancelar
+              </button>
+              <button *ngIf="!editar" class="btn btn-primary" type="button" (click)="registrar()">
+                Registrarse
+              </button>
+              <button *ngIf="editar" class="btn btn-primary" type="button" (click)="actualizar()">
+                Actualizar
+              </button>
+            </div>
+
+            <!-- Enlace a login (solo en registro) -->
+            <p class="text-center mt-3" *ngIf="!editar">
+              ¿Ya tienes cuenta?
+              <a class="text-primary" (click)="regresar()">Inicia sesión</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

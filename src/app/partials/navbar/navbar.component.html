@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-left">
+      <img src="assets/images/logo-paytrack.png" alt="PayTrack Logo" class="navbar-logo">
+      <span class="navbar-app-name">PayTrack</span>
+    </div>
+    <div class="navbar-right">
+      <div class="profile-icon" (click)="toggleProfileMenu()">
+        <i class="bi bi-person-circle"></i>
+      </div>
+      <div class="profile-menu" *ngIf="showProfileMenu" @fadeInOut>
+        <div class="menu-item" (click)="viewProfile()">
+          <i class="bi bi-person"></i> Ver Perfil
+        </div>
+        <div class="menu-item" (click)="logout()">
+          <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

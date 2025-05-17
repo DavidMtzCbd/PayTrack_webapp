@@ -1,0 +1,72 @@
+<div class="wrapper">
+  <div class="header-registro">
+    <app-navbar></app-navbar>
+  </div>
+
+  <div class="body-pagos">
+    <!-- Título personalizado -->
+    <div class="row mt-5 mb-3">
+      <div class="col-12">
+        <span class="title-perfil">Hola, {{ name_user }}</span>
+      </div>
+    </div>
+
+    <!-- Tabla de pagos -->
+    <div class="container">
+      <div class="row mt-3 mb-4">
+        <div class="col-12">
+          <div class="alert alert-primary" role="alert">
+            <span class="title-table">Historial de pagos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla con solo 3 columnas (monto, fecha, tipo) + eliminar -->
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+          <!-- Columna MONTO -->
+          <ng-container matColumnDef="monto">
+            <th mat-header-cell *matHeaderCellDef> Monto </th>
+            <td mat-cell *matCellDef="let pago">
+              {{ pago.monto | currency }} <!-- Formato de dinero -->
+            </td>
+          </ng-container>
+
+          <!-- Columna FECHA -->
+          <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef> Fecha </th>
+            <td mat-cell *matCellDef="let pago">
+              {{ pago.fecha | date:'dd/MM/yyyy' }} <!-- Formato fecha -->
+            </td>
+          </ng-container>
+
+          <!-- Columna TIPO -->
+          <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let pago">
+              <span class="badge-tipo" [class]="'tipo-' + pago.tipo.toLowerCase()">
+                {{ pago.tipo }}
+              </span>
+            </td>
+          </ng-container>
+
+          <!-- Columna ELIMINAR (icono trash) -->
+          <ng-container matColumnDef="eliminar">
+            <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+            <td mat-cell *matCellDef="let pago" class="td-eliminar">
+              <i class="bi bi-trash3-fill" (click)="delete(pago.id)"></i>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <!-- Paginador (opcional) -->
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons>
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

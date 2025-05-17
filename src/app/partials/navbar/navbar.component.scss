@@ -1,0 +1,84 @@
+.navbar {
+  background-color: #ff335e;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    width: 100%; // 🔑 Asegura que el contenedor use todo el ancho
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-right {
+    margin-left: auto; // 🔑 Esto empuja el perfil a la derecha
+    position: relative;
+  }
+
+  .navbar-logo {
+    height: 32px;
+    margin-right: 12px;
+  }
+
+  .navbar-app-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .profile-icon {
+    font-size: 1.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .profile-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 180px;
+    overflow: hidden;
+    z-index: 1001;
+    margin-top: 8px;
+
+    .menu-item {
+      padding: 0.75rem 1rem;
+      color: #333;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      i {
+        margin-right: 8px;
+        font-size: 1rem;
+      }
+
+      &:hover {
+        background-color: #f8f9fa;
+      }
+
+      &:first-child {
+        border-bottom: 1px solid #eee;
+      }
+    }
+  }
+}

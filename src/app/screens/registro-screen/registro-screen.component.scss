@@ -1,0 +1,109 @@
+.registro {
+  min-height: 100vh;
+  overflow-y: auto ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/assets/images/login-bg.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+
+  .wrapper {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+
+    .card {
+      width: 100%;
+
+      .card-body {
+        padding: 2.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+        .logo-paytrack {
+          width: 150px;
+          display: block;
+          margin: 0 auto 2rem auto;
+        }
+
+        .title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          text-align: center;
+          margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+          color: #6c757d;
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+
+        .form-control {
+          height: 45px;
+          border-radius: 8px;
+
+          &:disabled {
+            background-color: #e9ecef;
+          }
+        }
+
+        .btn-primary {
+          height: 45px;
+          border-radius: 8px;
+          background-color: #4e73df;
+          border: none;
+          padding: 0 1.5rem;
+        }
+
+        .btn-outline-secondary {
+          height: 45px;
+          border-radius: 8px;
+          padding: 0 1.5rem;
+        }
+
+        .form-text {
+          font-size: 0.8rem;
+          color: #6c757d;
+          margin-top: 0.25rem;
+        }
+
+        .input-group {
+          .btn-outline-secondary {
+            border-color: #ced4da;
+            &:hover {
+              background-color: #e9ecef;
+            }
+          }
+        }
+
+        .d-flex {
+          gap: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .registro {
+    .wrapper {
+      padding: 1rem;
+
+      .card-body {
+        padding: 1.5rem;
+
+        .d-flex {
+          flex-direction: column;
+          gap: 0.5rem;
+
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

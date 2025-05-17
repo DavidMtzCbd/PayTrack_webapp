@@ -1,0 +1,70 @@
+.wrapper {
+  width: 100vw;
+  min-height: 90vh; // Cambié a min-height para flexibilidad
+}
+
+.body-pagos {
+  padding: 0 2rem;
+  margin-top: 70px;
+}
+
+.title-perfil {
+  font-size: 2rem;
+  font-family: Nexa-Bold;
+  color: #231F20;
+}
+
+.title-table {
+  font-size: 1.5rem;
+  font-family: Nexa-Bold;
+  color: #231F20;
+}
+
+/* ---- Estilos de la tabla ---- */
+.mat-mdc-header-cell {
+  font-family: Nexa-Bold !important;
+  color: #231F20 !important;
+  font-size: 1rem !important;
+  background-color: #f8f9fa !important; // Fondo gris claro
+}
+
+.mat-mdc-cell {
+  font-family: Nexa !important;
+  color: #231F20 !important;
+}
+
+/* Badges para tipos de pago */
+.badge-tipo {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+
+  &.tipo-transferencia {
+    background-color: #e3f2fd;
+    color: #1976d2;
+  }
+
+  &.tipo-efectivo {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  &.tipo-tarjeta {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+  }
+}
+
+/* Botón eliminar */
+.td-eliminar {
+  color: #E84150 !important;
+  cursor: pointer !important;
+  font-size: 1.2rem !important;
+  text-align: center !important;
+
+  &:hover {
+    color: #ce1626 !important;
+    transform: scale(1.1); // Efecto hover más moderno
+  }
+}
