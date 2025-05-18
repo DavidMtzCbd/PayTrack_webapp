@@ -3,13 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('/assets/images/login-bg.jpg') no-repeat center center;
+  background: url('/assets/images/login-bg.png') no-repeat center center;
   background-size: cover;
   background-position: center;
 
   .wrapper {
     width: 100%;
-    max-width: 600px; // Ancho máximo para la tarjeta
+    max-width: 600px;
     padding: 2rem;
 
     .card {
@@ -32,6 +32,7 @@
           font-weight: 600;
           text-align: center;
           margin-bottom: 0.5rem;
+          color: #C04E8D;
         }
 
         .subtitle {
@@ -43,13 +44,44 @@
         .form-control {
           height: 45px;
           border-radius: 8px;
+          border: 1px solid #E8A6C4;
+
+          &:focus {
+            border-color: #D16BA5;
+            box-shadow: 0 0 0 0.2rem rgba(209, 107, 165, 0.25);
+          }
         }
 
         .btn-primary {
           height: 45px;
           border-radius: 8px;
-          background-color: #4e73df;
+          background-color: #D16BA5;
           border: none;
+          font-weight: 600;
+
+          &:hover {
+            background-color: #C04E8D;
+          }
+        }
+
+        .btn-outline-secondary {
+          border-color: #D8BFD8;
+          color: #C04E8D;
+
+          &:hover {
+            background-color: #FBE5EC;
+            border-color: #C04E8D;
+            color: #B03A77;
+          }
+        }
+
+        a.text-primary {
+          color: #E67EBC !important;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #C04E8D !important;
+          }
         }
       }
     }

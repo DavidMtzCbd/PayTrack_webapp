@@ -1,10 +1,10 @@
 .registro {
   min-height: 100vh;
-  overflow-y: auto ;
+  overflow-y: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('/assets/images/login-bg.jpg') no-repeat center center;
+  background: url('/assets/images/login-bg.png') no-repeat center center;
   background-size: cover;
   background-position: center;
 
@@ -33,6 +33,7 @@
           font-weight: 600;
           text-align: center;
           margin-bottom: 0.5rem;
+          color: #C04E8D;
         }
 
         .subtitle {
@@ -44,38 +45,70 @@
         .form-control {
           height: 45px;
           border-radius: 8px;
+          border: 1px solid #E8A6C4;
+
+          &:focus {
+            border-color: #D16BA5;
+            box-shadow: 0 0 0 0.2rem rgba(209, 107, 165, 0.25);
+          }
 
           &:disabled {
-            background-color: #e9ecef;
+            background-color: #f5f1f3;
           }
         }
 
         .btn-primary {
           height: 45px;
           border-radius: 8px;
-          background-color: #4e73df;
+          background-color: #D16BA5;
           border: none;
           padding: 0 1.5rem;
+          font-weight: 600;
+
+          &:hover {
+            background-color: #C04E8D;
+          }
         }
 
         .btn-outline-secondary {
           height: 45px;
           border-radius: 8px;
           padding: 0 1.5rem;
+          border-color: #D8BFD8;
+          color: #C04E8D;
+
+          &:hover {
+            background-color: #FBE5EC;
+            border-color: #C04E8D;
+            color: #B03A77;
+          }
         }
 
         .form-text {
           font-size: 0.8rem;
-          color: #6c757d;
+          color: #9f608f;
           margin-top: 0.25rem;
         }
 
         .input-group {
           .btn-outline-secondary {
-            border-color: #ced4da;
+            border-color: #D8BFD8;
+            color: #C04E8D;
+
             &:hover {
-              background-color: #e9ecef;
+              background-color: #FBE5EC;
+              border-color: #C04E8D;
+              color: #B03A77;
             }
+          }
+        }
+
+        a.text-primary {
+          color: #E67EBC !important;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #C04E8D !important;
           }
         }
 
